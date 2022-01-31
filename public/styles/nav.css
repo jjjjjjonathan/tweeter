@@ -4,12 +4,15 @@ nav {
   color: #ffffff;
   height: 120px;
   width: 100vw;
-  padding: 0 1.5em;
+  padding: 0.5em 1.5em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  position: relative;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 nav span {
@@ -31,4 +34,8 @@ nav .tweet-container {
 
 nav .tweet-container i {
   color: red;
+}
+
+nav p {
+  margin: 0;
 }
