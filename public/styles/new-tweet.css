@@ -28,3 +28,7 @@
   background-color: #4056a1;
   color: #ffffff;
 }
+
+.over-character-limit {
+  color: red;
+}
