@@ -1,0 +1,30 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+  width: 100%
+}
+
+.new-tweet #tweet-text {
+  width: 80vw;
+  border: none;
+  background-color: #f4f1ec;
+  border-bottom: 2px solid #545149;
+}
+
+.new-tweet .footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px 0;
+  font-family: 'Bungee', sans-serif;
+}
+
+.footer-container button {
+  background-color: #4056a1;
+  color: #ffffff;
+}
