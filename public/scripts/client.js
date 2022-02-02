@@ -33,7 +33,7 @@ const createTweetElement = tweetData => {
   <footer>
     <div class="tweet-footer">
       <div class="date">
-        <p>10 days ago</p>
+        <p>${timeago.format(tweetData.created_at)}</p>
       </div>
       <div class="tweet-actions">
         <i class="fas fa-flag"></i>
