@@ -20,7 +20,6 @@ body {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
   padding-top: 120px;
-  width: 100vw;
 }
 
 /*
@@ -42,7 +41,8 @@ article.tweet {
   height: 350px;
   border: solid;
   padding: 15px;
-  width: 90%;
+  width: 100%;
+  margin: 20px auto
 }
 
 article.tweet header {
@@ -55,7 +55,7 @@ article.tweet header {
 }
 
 article.tweet .tweet-header img {
-  width: 50px;
+  width: 64px;
   height: auto;
   margin-right: 5px
 }
