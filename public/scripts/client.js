@@ -1,8 +1,24 @@
+/* eslint-disable no-undef */
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+$(() => {
+  renderTweets(tweetData);
+  $('#new-tweet-form').on('submit', onSubmit);
+});
+
+const onSubmit = function(event) {
+  event.preventDefault();
+  const data = $(this).serialize();
+
+  $.post('/tweets/', data)
+    .then(() => {
+
+    });
+};
 
 const tweetData = [
   {
@@ -60,22 +76,10 @@ const createTweetElement = tweetData => {
 };
 
 const renderTweets = (tweets) => {
+
+  const tweetContainer = $('#tweets-container');
+
   for (const tweet of tweets) {
-    $('#tweets-container').append(createTweetElement(tweet));
+    tweetContainer.prepend(createTweetElement(tweet));
   }
 };
-
-$(() => {
-  renderTweets(tweetData);
-
-  const $newTweet = $('#new-tweet-form');
-  $newTweet.submit(event => {
-    // console.log($('#tweet-text').val());
-    event.preventDefault();
-    const queryStr = $(event.target).serialize();
-    $.ajax(`/tweets/?${queryStr}`, { method: 'POST' })
-    .then(response => {
-      console.log(response)
-    })
-  });
-});
