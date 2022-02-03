@@ -29,7 +29,7 @@ const onSubmit = function(event) {
     const data = $(this).serialize();
     $.post('/tweets/', data)
       .then(() => {
-
+        loadTweets();
       });
   }
 };
