@@ -15,7 +15,7 @@ const escape = str => {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 const renderTweets = (tweets) => {
   const tweetContainer = $('#tweets-container');
@@ -27,10 +27,12 @@ const renderTweets = (tweets) => {
 const onSubmit = function(event) {
   event.preventDefault();
   if ($('#tweet-text').val().length > 140) {
-    
+    $('#error-container').children().html(`You can't tweet more than 140 characters!`);
+    $('#error-container').slideDown("slow");
     return false;
   } else if ($('#tweet-text').val() === null || $('#tweet-text').val() === "") {
-    alert("Your tweet can't be empty!");
+    $('#error-container').children().html(`Your tweet can't be empty!`);
+    $('#error-container').slideDown("slow");
     return false;
   } else {
     const data = $(this).serialize();
@@ -38,6 +40,7 @@ const onSubmit = function(event) {
       .then(() => {
         loadTweets();
         $('#tweet-text').val('');
+        $('#error-container').slideUp();
       });
   }
 };
