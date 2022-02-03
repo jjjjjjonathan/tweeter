@@ -19,8 +19,12 @@ const escape = str => {
 
 const renderTweets = (tweets) => {
   const tweetContainer = $('#tweets-container');
-  for (const tweet of tweets) {
-    tweetContainer.prepend(createTweetElement(tweet));
+  if (!Array.isArray(tweets)) {
+    tweetContainer.prepend(createTweetElement(tweets));
+  } else {
+    for (const tweet of tweets) {
+      tweetContainer.prepend(createTweetElement(tweet));
+    }
   }
 };
 
@@ -38,17 +42,21 @@ const onSubmit = function(event) {
     const data = $(this).serialize();
     $.post('/tweets/', data)
       .then(() => {
-        loadTweets();
+        loadTweets(true);
         $('#tweet-text').val('');
         $('#error-container').slideUp();
       });
   }
 };
 
-const loadTweets = () => {
+const loadTweets = refresh => {
   $.getJSON('/tweets/')
     .then(function(data) {
-      renderTweets(data);
+      if (refresh) {
+        renderTweets(data[data.length - 1]);
+      } else {
+        renderTweets(data);
+      }
     });
 };
 
