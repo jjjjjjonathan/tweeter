@@ -6,17 +6,38 @@
  */
 
 $(() => {
-  renderTweets(tweetData);
+  loadTweets();
   $('#new-tweet-form').on('submit', onSubmit);
 });
 
+const renderTweets = (tweets) => {
+  const tweetContainer = $('#tweets-container');
+  for (const tweet of tweets) {
+    tweetContainer.prepend(createTweetElement(tweet));
+  }
+};
+
 const onSubmit = function(event) {
   event.preventDefault();
-  const data = $(this).serialize();
+  if ($('#tweet-text').val().length > 140) {
+    alert("Too many characters in your tweet.");
+    return false;
+  } else if ($('#tweet-text').val() === null || $('#tweet-text').val() === "") {
+    alert("Your tweet can't be empty!");
+    return false;
+  } else {
+    const data = $(this).serialize();
+    $.post('/tweets/', data)
+      .then(() => {
 
-  $.post('/tweets/', data)
-    .then(() => {
+      });
+  }
+};
 
+const loadTweets = () => {
+  $.getJSON('/tweets/')
+    .then(function(data) {
+      renderTweets(data);
     });
 };
 
@@ -75,11 +96,3 @@ const createTweetElement = tweetData => {
   return $tweet;
 };
 
-const renderTweets = (tweets) => {
-
-  const tweetContainer = $('#tweets-container');
-
-  for (const tweet of tweets) {
-    tweetContainer.prepend(createTweetElement(tweet));
-  }
-};
