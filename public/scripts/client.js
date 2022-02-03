@@ -8,7 +8,14 @@
 $(() => {
   loadTweets();
   $('#new-tweet-form').on('submit', onSubmit);
+  $('#error-container').hide();
 });
+
+const escape = str => {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 const renderTweets = (tweets) => {
   const tweetContainer = $('#tweets-container');
@@ -20,7 +27,7 @@ const renderTweets = (tweets) => {
 const onSubmit = function(event) {
   event.preventDefault();
   if ($('#tweet-text').val().length > 140) {
-    alert("Too many characters in your tweet.");
+    
     return false;
   } else if ($('#tweet-text').val() === null || $('#tweet-text').val() === "") {
     alert("Your tweet can't be empty!");
@@ -54,7 +61,7 @@ const createTweetElement = tweetData => {
     <p>${tweetData.user.handle}</p>
   </header>
   <div class="tweet-content">
-    <p>${tweetData.content.text}</p>
+    <p>${escape(tweetData.content.text)}</p>
   </div>
   <footer>
     <div class="tweet-footer">

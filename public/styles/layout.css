@@ -97,3 +97,15 @@ article.tweet .tweet-actions i:hover {
 article:hover {
   box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.2);
 }
+
+#error-container {
+  width: 90%;
+  margin: 15px 0;
+  padding: 0 10px;
+  border: 2px solid red;
+  display: block;
+}
+
+#error-container p {
+  color: rgb(158, 0, 0);
+}
