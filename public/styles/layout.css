@@ -100,6 +100,10 @@ article:hover {
   box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.2);
 }
 
+article.tweet p.handle {
+  color:rgb(172, 172, 172)
+}
+
 .tweet-content {
   width: 100%;
   word-wrap: break-word;

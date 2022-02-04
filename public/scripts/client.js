@@ -76,7 +76,7 @@ const createTweetElement = tweetData => {
         <p>${tweetData.user.name}</p>
       </div>
     </div>
-    <p>${tweetData.user.handle}</p>
+    <p class="handle">${tweetData.user.handle}</p>
   </header>
   <div class="tweet-content">
     <p>${escape(tweetData.content.text)}</p>
