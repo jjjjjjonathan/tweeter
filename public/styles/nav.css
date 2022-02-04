@@ -20,25 +20,33 @@ nav span {
   font-size: 2em;
 }
 
-nav .tweet-container span {
+nav #compose-container span {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   font-size: 1em;
 }
 
-nav .tweet-container {
+nav #compose-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-nav .tweet-container i {
+nav #compose-container i {
   color: red;
 }
 
 nav p {
   margin: 0;
+  color: white;
+}
+
+nav button {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
 }
 
 /* mobile styles */

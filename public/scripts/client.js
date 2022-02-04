@@ -8,7 +8,9 @@
 $(() => {
   loadTweets();
   $('#new-tweet-form').on('submit', onSubmit);
+  $('#tweet-composer').on('click', showTweetComposer);
   $('#error-container').hide();
+  $('#new-tweet').hide();
 });
 
 const escape = str => {
@@ -47,6 +49,10 @@ const onSubmit = function(event) {
         $('#error-container').slideUp();
       });
   }
+};
+
+const showTweetComposer = () => {
+  $('#new-tweet').slideDown("slow");
 };
 
 const loadTweets = refresh => {
