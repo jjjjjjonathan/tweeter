@@ -1,6 +1,7 @@
 .new-tweet {
   display: flex;
   flex-direction: column;
+  width: 90%
 }
 
 .new-tweet form {
@@ -10,7 +11,6 @@
 }
 
 .new-tweet #tweet-text {
-  width: 80vw;
   border: none;
   background-color: #f4f1ec;
   border-bottom: 2px solid #545149;

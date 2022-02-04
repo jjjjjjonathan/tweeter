@@ -1,16 +1,25 @@
-header {
+#profile-header {
   position: relative;
   color: #ffffff;
-  height: 400px;
-  width: 100%;
+  height: 520px;
+  width: 25vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #4f2683;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  margin-top: 50px;
 }
 
 header h2 {
   margin: 0;
+}
+
+/* mobile styles */
+@media (max-width: 1024px) {
+  #profile-header {
+    width: 100%;
+    margin: auto;
+  }
 }
