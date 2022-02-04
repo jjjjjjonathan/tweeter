@@ -53,6 +53,7 @@ const onSubmit = function(event) {
 
 const showTweetComposer = () => {
   $('#new-tweet').slideDown("slow");
+  $('#tweet-text').focus();
 };
 
 const loadTweets = refresh => {
