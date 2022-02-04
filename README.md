@@ -27,3 +27,9 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 - body-parser
 - md5
+
+## Future Plans
+
+- Add a second button near the bottom of the mobile app to open the tweet composer. This would especially be helpful for mobile users when it's hard to reach the top of the device with one hand. It would be better ergonomically for a button near the bottom of the screen.
+
+- Apply SASS to Tweeter.
