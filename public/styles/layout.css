@@ -27,6 +27,8 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+/* main container  */
+
 main {
   display: flex;
   flex-direction: column;
@@ -35,6 +37,8 @@ main {
   position: relative;
   width: 50vw;
 }
+
+/* tweets timeline */
 
 #tweets-container {
   width: 90%;
@@ -109,6 +113,8 @@ article.tweet p.handle {
   word-wrap: break-word;
 }
 
+/* error container */
+
 #error-container {
   width: 90%;
   margin: 15px 0;
@@ -121,6 +127,8 @@ article.tweet p.handle {
   color: rgb(158, 0, 0);
   font-weight: 600;
 }
+
+/* container containing header and main */
 
 #desktop-container {
   display: flex;
